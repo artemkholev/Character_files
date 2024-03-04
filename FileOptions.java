@@ -30,8 +30,9 @@ public class FileOptions {
                 }
             }
             reader.close();
-        } catch (Exception e) {
-            System.out.println(e);
+        }  catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
         }
     }
 
@@ -44,8 +45,9 @@ public class FileOptions {
                 output.write((char) entry.getKey().intValue() + " count: " + entry.getValue() + "\n");
             }
             output.close();
-        } catch ( Exception e ) {
-            System.out.println(e);
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing the file.");
+            e.printStackTrace();
         }
     }
 }
